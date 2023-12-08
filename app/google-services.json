@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "761876715392",
+    "project_id": "firstapp137",
+    "storage_bucket": "firstapp137.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:761876715392:android:df617a8f0e9d0a80865365",
+        "android_client_info": {
+          "package_name": "gov.rajasthan.firstapp137"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDFQHoh3by4DNA1kq_ogXYlSwuAzNWoZms"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
