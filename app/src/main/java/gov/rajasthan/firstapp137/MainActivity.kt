@@ -5,20 +5,27 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.provider.ContactsContract.CommonDataKinds.Note
 import android.util.Log
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.google.firebase.Firebase
+import com.google.firebase.firestore.FirebaseFirestore
+import com.google.firebase.firestore.Query
 import com.google.firebase.firestore.firestore
 import gov.rajasthan.firstapp137.databinding.ActivityMainBinding
 import gov.rajasthan.firstapp137.databinding.AddNoteDialogBinding
+import java.util.Calendar
 
 class MainActivity : AppCompatActivity() {
 
     lateinit var binding: ActivityMainBinding
+    lateinit var firestore : FirebaseFirestore
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        val firestore = Firebase.firestore
+        firestore = Firebase.firestore
+
+        getAllNotes()
 
         binding.fabAdd.setOnClickListener {
 
@@ -32,12 +39,16 @@ class MainActivity : AppCompatActivity() {
 
                 if(title.isNotEmpty() && desc.isNotEmpty()){
                     // writing into firestore
-                    val newNote = NoteModel(title, desc)
+                    val currTimeStamp = Calendar.getInstance().timeInMillis
+                    val newNote = NoteModel(title, desc, currTimeStamp)
+
                     firestore
                         .collection("notes")
-                        .add(newNote)
+                        .document("$currTimeStamp")
+                        .set(newNote)
                         .addOnSuccessListener {
                             Log.d("Success: ", "Note added successfully!!")
+                            getAllNotes()
                         }
                         .addOnFailureListener{
                             Log.d("Failed: ", "Error adding note: ${it.message}")
@@ -57,5 +68,28 @@ class MainActivity : AppCompatActivity() {
         }
 
 
+    }
+
+    fun getAllNotes(){
+        firestore
+            .collection("notes")
+            .orderBy("timeSTamp", Query.Direction.DESCENDING)
+            .get()
+            .addOnSuccessListener {
+                val notesData = ArrayList<NoteModel>()
+
+                for(eachDoc in it.documents){
+                    val mNote = eachDoc.toObject(NoteModel::class.java)
+                    notesData.add(mNote!!)
+                }
+
+                binding.recyclerNotes.layoutManager = LinearLayoutManager(this)
+                binding.recyclerNotes.adapter = RecyclerNotesAdapter(this, notesData)
+
+            }
+            .addOnFailureListener{
+                Log.d("Failed: ", "Error Fetching notes: ${it.message}")
+                it.printStackTrace()
+            }
     }
 }
