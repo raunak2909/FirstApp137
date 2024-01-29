@@ -1,0 +1,275 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout
+
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".SignUpActivity">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardElevation="@dimen/cardview_compat_inset_shadow">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="User Registration"
+            android:textStyle="bold"
+            android:textSize="34sp"
+            android:padding="11dp"/>
+
+
+
+
+
+    </androidx.cardview.widget.CardView>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:gravity="center">
+
+                <Button
+                    android:layout_width="300dp"
+                    android:layout_height="wrap_content"
+                    android:text="Upload Image"
+                    android:layout_marginTop="10dp"/>
+
+            </LinearLayout>
+
+            <EditText
+                android:id="@+id/editFullName"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginStart="16dp"
+                android:inputType="textCapWords"
+                android:layout_marginTop="21dp"
+                android:layout_marginEnd="16dp"
+                android:background="@drawable/custom_edit_text"
+                android:hint = "Enter your Full Name"
+                android:padding="11dp"/>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/phoneContainer"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+                android:layout_marginHorizontal="20dp"
+                app:helperText="required"
+                app:helperTextTextColor="@android:color/holo_red_dark"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:counterEnabled="true"
+                app:counterMaxLength="10"
+                android:layout_marginTop="30dp"
+                app:prefixText="+91"
+
+                app:startIconDrawable="@drawable/call"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/passwordContainer">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/phoneEditText"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:lines="1"
+                    android:inputType="number"
+                    android:maxLength="10"
+                    android:maxLines="1"
+                    android:hint="phone_number"/>
+
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+
+
+            <EditText
+                android:id="@+id/editEmail"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginStart="16dp"
+                android:importantForAutofill="no"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="16dp"
+                android:inputType="textEmailAddress"
+                android:background="@drawable/custom_edit_text"
+                android:hint=" Enter your Email"
+                android:padding="11dp"/>
+
+
+
+            <Spinner
+                android:id="@+id/spinnerID"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="16dp"
+                android:paddingLeft="20dp"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="16dp"
+                android:gravity="center"
+                android:padding="11dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Date Of Birth"
+                    android:layout_marginRight="10dp"
+                    android:textSize="19sp"
+                    android:textStyle="bold"/>
+
+                <TextView
+                    android:id="@+id/selectDate"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:background="@drawable/custom_edit_text"
+                    android:inputType="number"
+                    android:drawablePadding="11dp"
+                    android:text="  Select Date"
+                    android:textSize="20dp"
+                    android:layout_gravity="center"
+                    android:padding="11dp"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="16dp"
+                android:gravity="center"
+                android:padding="11dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Gender"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    android:layout_marginRight="40dp"/>
+
+
+                <RadioGroup
+                    android:id="@+id/radioGrpGender"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <RadioButton android:id="@+id/radio_male"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="20sp"
+                        android:textStyle="bold"
+                        android:paddingRight="20dp"
+                        android:text="Male"/>
+                    <RadioButton android:id="@+id/radio_female"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textStyle="bold"
+                        android:textSize="20sp"
+                        android:text="Female"/>
+                </RadioGroup>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Marital Status :- "
+                    android:layout_marginRight="10dp"
+                    android:textStyle="bold"/>
+
+
+
+                <CheckBox android:id="@+id/checkbox_meat"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Married" />
+                <CheckBox android:id="@+id/checkbox_cheese"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="UnMarried"/>
+            </LinearLayout>
+
+
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardElevation="10dp"
+                app:cardCornerRadius="20dp"
+                android:layout_margin="10dp"
+                app:cardBackgroundColor="@color/white"
+                app:cardMaxElevation="12dp"
+                app:cardPreventCornerOverlap="true"
+                app:cardUseCompatPadding="true">
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="22dp"
+                    android:orientation="vertical">
+
+                    <EditText
+                        android:id="@+id/editPass"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:inputType="textPassword"
+                        android:background="@drawable/custom_edit_text"
+                        android:hint = "Enter Password"
+                        android:padding="11dp"/>
+
+                    <EditText
+                        android:id="@+id/editCnfPassword"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:inputType="textPassword"
+                        android:layout_marginTop="10dp"
+                        android:background="@drawable/custom_edit_text"
+                        android:hint = "Confirm Password"
+                        android:padding="11dp"/>
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Submit"
+                android:id="@+id/btnSubmit"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                android:layout_marginBottom="20dp"/>
+
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

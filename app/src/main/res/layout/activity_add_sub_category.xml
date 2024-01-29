@@ -1,0 +1,59 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:padding="11dp"
+    android:layout_height="match_parent"
+    tools:context=".AddSubCategoryActivity">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="Add Sub Category"
+        android:textSize="25sp"/>
+
+    <LinearLayout
+        android:layout_margin="11dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="19sp"
+            android:text="Selecte Category"/>
+
+        <Spinner
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/spinnerCat"/>
+
+    </LinearLayout>
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/edtCatName"
+        android:layout_margin="11dp"
+        android:hint="Enter Sub Category.."/>
+
+    <ImageButton
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="11dp"
+        android:contentDescription="Pick image"
+        android:src="@android:drawable/ic_menu_camera"
+        android:id="@+id/btnSubCatImg"/>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Add Sub Category"
+        android:layout_margin="11dp"
+        android:src="@android:drawable/ic_menu_camera"
+        android:id="@+id/btnSave"/>
+
+</LinearLayout>
