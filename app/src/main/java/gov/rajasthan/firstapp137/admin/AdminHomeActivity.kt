@@ -8,6 +8,8 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.firestore.Query
 import gov.rajasthan.firstapp137.AddCategoryActivity
+import gov.rajasthan.firstapp137.AddProductActivity
+import gov.rajasthan.firstapp137.AddSubCategoryActivity
 import gov.rajasthan.firstapp137.NoteModel
 import gov.rajasthan.firstapp137.R
 import gov.rajasthan.firstapp137.RecyclerNotesAdapter
@@ -29,9 +31,15 @@ class AdminHomeActivity : AppCompatActivity() {
         }*/
 
         binding.btnCat.setOnClickListener {
-
             startActivity(Intent(this@AdminHomeActivity, AddCategoryActivity::class.java))
+        }
 
+        binding.btnSubCat.setOnClickListener {
+            startActivity(Intent(this@AdminHomeActivity, AddSubCategoryActivity::class.java))
+        }
+
+        binding.btnProducts.setOnClickListener {
+            startActivity(Intent(this@AdminHomeActivity, AddProductActivity::class.java))
         }
 
 
