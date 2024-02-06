@@ -39,7 +39,7 @@
 
 
             <ImageView
-                android:id="@+id/proThumb"
+                android:id="@+id/imgProThumb"
                 android:layout_width="150dp"
                 android:layout_height="150dp"
                 android:padding="10dp"
@@ -47,7 +47,7 @@
                 android:src="@drawable/tshirt"/>
 
             <Button
-                android:id="@+id/btnProThumb"
+                android:id="@+id/btnAddProThumb"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
@@ -65,6 +65,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
                 <EditText
+                    android:id="@+id/edtProTitle"
                     android:maxLines="1"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -82,6 +83,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
                 <EditText
+                    android:id="@+id/edtProDesc"
                     android:maxLines="1"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -105,6 +107,7 @@
                     android:layout_weight="1"
                     android:layout_height="wrap_content">
                     <EditText
+                        android:id="@+id/edtProQty"
                         android:maxLines="1"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -155,6 +158,7 @@
                     android:layout_weight="1"
                     android:layout_height="wrap_content">
                     <EditText
+                        android:id="@+id/edtProPrice"
                         android:maxLines="1"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -200,6 +204,7 @@
                     android:layout_weight="1"
                     android:layout_height="wrap_content">
                     <EditText
+                        android:id="@+id/edtProDisPer"
                         android:maxLines="1"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -277,7 +282,7 @@
 
 
             <Button
-                android:id="@+id/btnproductsimg"
+                android:id="@+id/btnProductsImg"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
@@ -286,7 +291,7 @@
                 app:cornerRadius="10dp"
                 android:layout_gravity="center"/>
 
-            <LinearLayout
+            <!--<LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
@@ -319,11 +324,16 @@
                     android:src="@drawable/tshirt"/>
 
 
-            </LinearLayout>
+            </LinearLayout>-->
+            <androidx.recyclerview.widget.RecyclerView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/recyclerProductSlider"/>
 
 
 
             <Button
+                android:id="@+id/btnAddProduct"
                 android:layout_width="match_parent"
                 android:layout_marginRight="20dp"
                 android:layout_marginLeft="20dp"
